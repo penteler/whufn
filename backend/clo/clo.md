@@ -60,3 +60,4 @@ to `False`
 An instance of sqlalchemy being initialised 
 with the flask app instance `app` and assigned to the 
 variable `db`
+### Models
