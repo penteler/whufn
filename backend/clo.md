@@ -1,4 +1,6 @@
 ` crud` Create read update delete
+
+`CORS`  Cross Origin Resource Sharing
 ### In this image
 ![image](c1.jpg)
 1- Imports the flask 
@@ -27,7 +29,9 @@ inserting, updating, and deleting data."
 5- This how you initialize an instance of a flask app using the `Flask` class
 and assign it as a value to 
 a variable which is `app` in this case.
+
 ![image](c2.jpg)
+
 `__name__` is a kind of "variable in Python which is set to the name of the module in which it is used.
 When a script is run directly, `__name__` is set to `'__main__'`"
 "The Flask instance `app` is the central object of the application, and it will be used to configure the app and register routes"
@@ -37,7 +41,7 @@ Enables CORS (Cross Origin Resourse sharing) for the entire app.
 Here `CORS` is the class that was imported and the argument is the
  `app` varable. As you know from line 5 `app` is the flask app instance 
 `Flask(__name__)`
-
+ 
 8-
 A configuration variable of the flask app is being set to the URI of the database. `SQLALCHEMY_DATABASE_URI` is a key 
 in the app's configuration dictionary and we are using it to specify the location and type of database. Flask SQLAlchemy 
