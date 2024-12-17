@@ -61,3 +61,7 @@ An instance of sqlalchemy being initialised
 with the flask app instance `app` and assigned to the 
 variable `db`
 ### Models
+In the last line of the **configuration module** `config.py` an instance of the `SQLAlchemy` class was created 
+```python
+from config import db
+```
