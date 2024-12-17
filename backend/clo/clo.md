@@ -61,7 +61,24 @@ An instance of sqlalchemy being initialised
 with the flask app instance `app` and assigned to the 
 variable `db`
 ### Models
-In the last line of the **configuration module** `config.py` an instance of the `SQLAlchemy` class was created 
+In the last line of your **configuration module** `config.py` an instance of the `SQLAlchemy` class was created so now in `models.py` we can import that object: 
 ```python
 from config import db
 ```
+In this module `db` has already been configured as an instance of SQLAlchemy linked to an instance of a Flask app. Using the `app` variable wich has been further configured using configuration variables using configuration dictionary keys setting them to string or boolean values and enabling `CORS` for the app.
+Now the classes in this app can connect with the database using `db`.
+
+2- Declaring a class named `Contact` that inherets from `db.Model`:
+---
+```python
+class Contact(db.Model):
+```
+"- **`db.Model`**: A base class provided by SQLAlchemy to define models (tables in the database)."
+The `class Contact` in itself represents a table in the database and it's attributes will be used to map out its columns so here we have defined the `Contact` as a model/table in the database. Of course this is only the first line of its definition.
+
+In the `Contact` class we will define a column named `id` as the primary key 
+---
+```python
+id = db.Column(db.Integer, primary_key=True)
+```
+The data type of the primary key is usually Integer and this integer can be used to uniquely identify every row so we can imagine this as a sequence of numbers in a column with every row being assigned a unique number which would serve as its `primary_key`. The database will automatically increase this integer and will never allow these to match. I think we might end up having a key value pair here. 
