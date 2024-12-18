@@ -74,11 +74,21 @@ Now the classes in this app can connect with the database using `db`.
 class Contact(db.Model):
 ```
 "- **`db.Model`**: A base class provided by SQLAlchemy to define models (tables in the database)."
-The `class Contact` in itself represents a table in the database and it's attributes will be used to map out its columns so here we have defined the `Contact` as a model/table in the database. Of course this is only the first line of its definition.
+The `class Contact` in itself represents a table in the database and it's **attributes** will be used to map out its columns so here we have defined the `Contact` as a model/table in the database. Of course this is only the first line of its definition.
 
 In the `Contact` class we will define a column named `id` as the primary key 
 ---
 ```python
 id = db.Column(db.Integer, primary_key=True)
 ```
-The data type of the primary key is usually Integer and this integer can be used to uniquely identify every row so we can imagine this as a sequence of numbers in a column with every row being assigned a unique number which would serve as its `primary_key`. The database will automatically increase this integer and will never allow these to match. I think we might end up having a key value pair here. 
+The data type of the primary key is usually Integer and this integer can be used to uniquely identify every row so we can imagine this as a sequence of numbers in a column with every row being assigned a unique number which would serve as its `primary_key`. The database will automatically increase this integer and will never allow these to match. I think we might end up having a key value pair here.
+
+Creating a `first_name` Column for storing text:
+---
+```python
+first_name = db.Column(db.String(80), unique=False, nullable=False)
+```
+the `first_name` Column definition contains the data type which is `String` and I think a character limit of `(80)`
+
+
+
